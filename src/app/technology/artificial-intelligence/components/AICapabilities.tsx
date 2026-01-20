@@ -6,33 +6,33 @@ import styles from "./AICapabilities.module.css";
 const capabilities = [
   {
     icon: "🛡️",
-    title: "Fraud Detection",
-    description: "Real-time anomaly detection using neural networks to identify suspicious transactions instantly."
+    title: "Payment Protection",
+    description: "AI watches every transaction like a security guard, instantly flagging anything unusual while you go about your day worry-free."
   },
   {
     icon: "📊",
-    title: "Risk Scoring",
-    description: "Dynamic risk assessment models that adapt to evolving fraud patterns and user behavior."
+    title: "Smart Spending Insights",
+    description: "Your AI assistant learns your spending habits and provides helpful insights - like noticing you spend more on coffee than you realized."
   },
   {
     icon: "🎯",
-    title: "Smart Routing",
-    description: "Intelligent transaction routing optimized for success rates and cost efficiency."
+    title: "Faster Payments",
+    description: "Behind the scenes, AI picks the quickest route for your payments, ensuring your money reaches its destination fast every time."
   },
   {
     icon: "💬",
-    title: "Natural Language Processing",
-    description: "AI-powered customer support and query resolution with contextual understanding."
+    title: "24/7 Chat Support",
+    description: "Get instant answers to your payment questions anytime. Our AI chatbot understands what you're asking and helps immediately."
   },
   {
     icon: "🔍",
-    title: "Pattern Recognition",
-    description: "Identify complex transaction patterns and behavioral trends across millions of data points."
+    title: "Pattern Learning",
+    description: "The more you use SabbPe, the smarter it gets - learning your patterns to make your experience more personalized and secure."
   },
   {
     icon: "⚡",
-    title: "Auto-Decision Engine",
-    description: "Automated transaction approval/rejection with configurable business rules and ML models."
+    title: "Background Optimization",
+    description: "AI works behind the scenes to make your app faster and smoother - you just notice everything works better."
   }
 ];
 
@@ -47,9 +47,9 @@ export function AICapabilities() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>AI Capabilities</h2>
+          <h2 className={styles.title}>What AI Does for You</h2>
           <p className={styles.subtitle}>
-            Enterprise-grade artificial intelligence for financial services
+            Simple ways AI makes your payment experience better
           </p>
         </motion.div>
 

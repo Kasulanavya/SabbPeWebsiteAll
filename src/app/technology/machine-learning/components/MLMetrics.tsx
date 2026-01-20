@@ -1,28 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AnimatedCounter } from "./AnimatedCounter";
 import styles from "./MLMetrics.module.css";
 
 const metrics = [
   {
-    title: "Model Accuracy",
+    title: "Learning Accuracy",
     metric: "96%",
-    description: "Precision in fraud detection"
+    description: "Correctly identifies your patterns"
   },
   {
-    title: "Training Speed",
+    title: "Continuous Updates",
     metric: "2 hrs",
-    description: "Full model retraining cycle"
+    description: "App learns from new transactions"
   },
   {
-    title: "Prediction Latency",
+    title: "Instant Decisions",
     metric: "<10ms",
-    description: "Real-time inference speed"
+    description: "Real-time protection checks"
   },
   {
-    title: "Feature Engineering",
+    title: "Data Points Tracked",
     metric: "500+",
-    description: "Automated feature extraction"
+    description: "Patterns analyzed per transaction"
   }
 ];
 
@@ -37,9 +38,9 @@ export function MLMetrics() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Performance Metrics</h2>
+          <h2 className={styles.title}>The Numbers Behind the Learning</h2>
           <p className={styles.subtitle}>
-            Industry-leading ML model performance
+            How Machine Learning delivers better results
           </p>
         </motion.div>
 
@@ -54,7 +55,9 @@ export function MLMetrics() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
             >
-              <div className={styles.metric}>{metric.metric}</div>
+              <div className={styles.metric}>
+                <AnimatedCounter value={metric.metric} />
+              </div>
               <h3 className={styles.cardTitle}>{metric.title}</h3>
               <p className={styles.cardDescription}>{metric.description}</p>
             </motion.div>

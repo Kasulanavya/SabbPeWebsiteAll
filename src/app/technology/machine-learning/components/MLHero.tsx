@@ -24,11 +24,11 @@ export function MLHero() {
           </motion.div>
 
           <h1 className={styles.title}>
-            Self-Learning Payment Systems
+            Learning from Every Transaction
           </h1>
           
           <p className={styles.subtitle}>
-            Continuous model training and optimization for payment fraud detection, risk assessment, and transaction success prediction.
+            Machine Learning is like the difference between following a recipe exactly every time versus getting better at cooking through practice. While AI is the brain that powers your app's smart features, Machine Learning is what makes that brain smarter with every payment you make. It's the technology that helps SabbPe remember patterns, spot trends, and continuously improve how it serves you—without you ever having to teach it anything manually.
           </p>
         </motion.div>
       </div>

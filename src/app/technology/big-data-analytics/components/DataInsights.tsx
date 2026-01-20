@@ -1,28 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AnimatedCounter } from "./AnimatedCounter";
 import styles from "./DataInsights.module.css";
 
 const insights = [
   {
-    title: "Processing Speed",
+    title: "Handling Volume",
     metric: "10M+",
-    description: "Transactions per second"
+    description: "Payments analyzed every day"
   },
   {
-    title: "Data Storage",
+    title: "Complete History",
     metric: "5 PB",
-    description: "Transaction history archived"
+    description: "Transaction records stored"
   },
   {
-    title: "Query Performance",
+    title: "Instant Answers",
     metric: "<2s",
-    description: "Complex analytical queries"
+    description: "Get insights from millions of records"
   },
   {
-    title: "Data Freshness",
+    title: "Always Current",
     metric: "Real-Time",
-    description: "Live dashboard updates"
+    description: "Information updates as it happens"
   }
 ];
 
@@ -37,9 +38,9 @@ export function DataInsights() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Platform Performance</h2>
+          <h2 className={styles.title}>Scale That Works Behind the Scenes</h2>
           <p className={styles.subtitle}>
-            Industrial-scale data processing metrics
+            How we handle massive payment volumes reliably
           </p>
         </motion.div>
 
@@ -54,7 +55,9 @@ export function DataInsights() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
             >
-              <div className={styles.metric}>{insight.metric}</div>
+              <div className={styles.metric}>
+                <AnimatedCounter value={insight.metric} />
+              </div>
               <h3 className={styles.cardTitle}>{insight.title}</h3>
               <p className={styles.cardDescription}>{insight.description}</p>
             </motion.div>

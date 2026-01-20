@@ -15,16 +15,16 @@ export function AICTASection() {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.content}>
-            <h2 className={styles.title}>Deploy AI-Powered Payments</h2>
+            <h2 className={styles.title}>Intelligence You Can Trust</h2>
             <p className={styles.subtitle}>
-              Integrate intelligent fraud prevention and risk management into your payment infrastructure.
+              AI isn't flashy technology for the sake of it - it's about making your payments safer, smarter, and simpler. Every feature is designed to work invisibly in the background, giving you peace of mind without the complexity.
             </p>
             <motion.button
               className={styles.primaryButton}
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              Schedule Demo
+              See How It Works
               <span className={styles.arrow}>→</span>
             </motion.button>
           </div>

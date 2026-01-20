@@ -24,11 +24,11 @@ export function AIHero() {
           </motion.div>
 
           <h1 className={styles.title}>
-            Intelligent Payment Solutions
+            Your App's Intelligent Guardian
           </h1>
           
           <p className={styles.subtitle}>
-            Deploy advanced AI algorithms for fraud prevention, risk management, and intelligent transaction processing in real-time.
+            Think of artificial intelligence as the invisible brain working behind every tap and swipe in the SabbPe app. While you see a clean, simple interface on your phone, AI is constantly analyzing, learning, and protecting your payments in real-time. It's like having a personal financial assistant that never sleeps, always watching over your money and making your payment experience smoother with every transaction.
           </p>
         </motion.div>
       </div>

@@ -5,16 +5,16 @@ import styles from "./MLApplications.module.css";
 
 const applications = [
   {
-    title: "Transaction Success Prediction",
-    description: "ML models predict transaction approval likelihood based on historical data, payment method, merchant category, and real-time network conditions."
+    title: "Security That Learns",
+    description: "Every time you make a payment, SabbPe learns what 'normal' looks like for you. After weeks of watching your habits, it can instantly recognize when something unusual happens—like a payment from a new location or an unexpected large amount—and protect you automatically."
   },
   {
-    title: "Dynamic Risk Scoring",
-    description: "Continuously updated risk scores for each transaction using ensemble models that learn from millions of payment events daily."
+    title: "Insights That Matter",
+    description: "Machine Learning doesn't just track your spending—it understands it. The app notices patterns you might miss, like spending more on weekends or subscriptions adding up. These observations help you make smarter decisions about your money based on your actual behavior."
   },
   {
-    title: "Churn Prevention",
-    description: "Identify customers at risk of leaving through behavioral analysis and engagement patterns, enabling proactive retention strategies."
+    title: "Payments That Work Better",
+    description: "Every successful payment teaches the app something useful—which methods work best for you, which merchants are fastest, what times have fewer issues. Over months of learning, your payments become more reliable and faster without you doing anything differently."
   }
 ];
 
@@ -29,9 +29,9 @@ export function MLApplications() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Real-World Applications</h2>
+          <h2 className={styles.title}>What This Means for You</h2>
           <p className={styles.subtitle}>
-            Machine learning driving business outcomes in payments
+            Real benefits you'll experience as the app learns
           </p>
         </motion.div>
 

@@ -15,16 +15,16 @@ export function BigDataCTASection() {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.content}>
-            <h2 className={styles.title}>Scale Your Payment Analytics</h2>
+            <h2 className={styles.title}>Transparency That Builds Trust</h2>
             <p className={styles.subtitle}>
-              Process billions of transactions and unlock actionable business intelligence with enterprise big data infrastructure.
+              In payments, knowing what's happening with your money builds confidence. Analytics gives you complete visibility into transaction history, settlement timings, and revenue trends—making your financial operations clearer, more predictable, and easier to manage.
             </p>
             <motion.button
               className={styles.primaryButton}
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              Request Consultation
+              See Your Data at Work
               <span className={styles.arrow}>→</span>
             </motion.button>
           </div>

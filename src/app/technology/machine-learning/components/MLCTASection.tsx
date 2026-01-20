@@ -15,16 +15,16 @@ export function MLCTASection() {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.content}>
-            <h2 className={styles.title}>Implement ML-Powered Payments</h2>
+            <h2 className={styles.title}>Technology That Gets Better Every Day</h2>
             <p className={styles.subtitle}>
-              Integrate self-learning fraud detection and risk assessment models into your payment stack.
+              Unlike traditional software that stays the same until an update, Machine Learning means SabbPe is constantly evolving based on real usage. Every transaction adds to what the system knows, delivering better security, smarter insights, and more reliable payments month after month—without requiring any effort from you.
             </p>
             <motion.button
               className={styles.primaryButton}
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              Explore Solutions
+              Experience Smart Payments
               <span className={styles.arrow}>→</span>
             </motion.button>
           </div>

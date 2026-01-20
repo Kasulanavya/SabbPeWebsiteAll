@@ -5,16 +5,16 @@ import styles from "./AnalyticsCapabilities.module.css";
 
 const capabilities = [
   {
-    title: "Merchant Analytics",
-    description: "Comprehensive dashboards for transaction volumes, success rates, payment method preferences, and revenue trends with customizable reporting."
+    title: "Understanding What Your Customers Do",
+    description: "Discover when your customers are most active, which features they use, and how their behavior changes over time. See patterns you'd never spot manually, helping you make decisions based on real evidence instead of guesswork."
   },
   {
-    title: "Customer Behavior Analysis",
-    description: "Deep insights into payment patterns, lifetime value calculation, cohort analysis, and personalized recommendation engines."
+    title: "Insights That Help You Grow",
+    description: "Should you offer a weekend promotion? Is your loyalty program working? Which products sell together? Analytics answers these questions by showing actual customer behavior, giving you confidence to make smart business moves."
   },
   {
-    title: "Operational Intelligence",
-    description: "Monitor system performance, identify bottlenecks, track SLA compliance, and optimize infrastructure costs in real-time."
+    title: "Complete Visibility Into Your Payments",
+    description: "Track exactly where your money is, when settlements arrive, and why any payment was flagged. No more wondering or waiting—just clear, transparent information about your financial operations whenever you need it."
   }
 ];
 
@@ -29,9 +29,9 @@ export function AnalyticsCapabilities() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Analytics Capabilities</h2>
+          <h2 className={styles.title}>Smart Decisions Based on Real Behavior</h2>
           <p className={styles.subtitle}>
-            Transform raw payment data into strategic business insights
+            How analytics helps you understand and grow your business
           </p>
         </motion.div>
 

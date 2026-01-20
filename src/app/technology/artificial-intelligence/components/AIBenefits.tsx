@@ -1,28 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AnimatedCounter } from "./AnimatedCounter";
 import styles from "./AIBenefits.module.css";
 
 const benefits = [
   {
-    title: "Fraud Reduction",
+    title: "Better Protection",
     metric: "98%",
-    description: "Accuracy in fraud detection"
+    description: "Fraud detected and stopped automatically"
   },
   {
-    title: "Processing Speed",
+    title: "Lightning Fast",
     metric: "<50ms",
-    description: "Real-time transaction decisions"
+    description: "Instant payment approvals"
   },
   {
-    title: "Cost Savings",
+    title: "Save Money",
     metric: "60%",
-    description: "Reduction in manual reviews"
+    description: "Lower costs with smart automation"
   },
   {
-    title: "False Positives",
+    title: "Less Hassle",
     metric: "85%",
-    description: "Lower decline rate"
+    description: "Fewer false payment blocks"
   }
 ];
 
@@ -37,9 +38,9 @@ export function AIBenefits() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Measurable Impact</h2>
+          <h2 className={styles.title}>The Results Speak for Themselves</h2>
           <p className={styles.subtitle}>
-            Proven results from AI-powered payment solutions
+            Real numbers showing how AI makes payments better
           </p>
         </motion.div>
 
@@ -54,7 +55,9 @@ export function AIBenefits() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
             >
-              <div className={styles.metric}>{benefit.metric}</div>
+              <div className={styles.metric}>
+                <AnimatedCounter value={benefit.metric} />
+              </div>
               <h3 className={styles.cardTitle}>{benefit.title}</h3>
               <p className={styles.cardDescription}>{benefit.description}</p>
             </motion.div>

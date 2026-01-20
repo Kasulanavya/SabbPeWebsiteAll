@@ -5,34 +5,34 @@ import styles from "./MLModels.module.css";
 
 const models = [
   {
-    icon: "🌲",
-    title: "Random Forest",
-    description: "Ensemble learning for transaction classification and risk scoring with high accuracy."
+    icon: "🛡️",
+    title: "Learning Your Normal",
+    description: "The app watches your typical spending habits—favorite stores, usual amounts, regular times—so it can instantly spot when something doesn't fit your pattern."
   },
   {
-    icon: "🔷",
-    title: "Neural Networks",
-    description: "Deep learning models for complex pattern recognition in payment behaviors."
+    icon: "📊",
+    title: "Smarter Over Time",
+    description: "Every payment you make teaches the app something new. The more you use SabbPe, the better it understands what's normal for you and what's suspicious."
   },
   {
-    icon: "📉",
-    title: "Gradient Boosting",
-    description: "XGBoost and LightGBM for fraud detection with minimal false positives."
+    icon: "🎯",
+    title: "Personalized Insights",
+    description: "Based on what it's learned about your habits, the app can give you meaningful spending insights that actually make sense for your lifestyle."
   },
   {
-    icon: "🔄",
-    title: "Time Series Forecasting",
-    description: "LSTM networks predicting transaction volumes and seasonal payment trends."
+    icon: "⚡",
+    title: "Better Payment Routes",
+    description: "The app learns which payment paths work best for you and automatically uses them, making your transactions faster and more reliable over time."
   },
   {
-    icon: "👥",
-    title: "Clustering Algorithms",
-    description: "K-means and DBSCAN for customer segmentation and behavior grouping."
+    icon: "🔍",
+    title: "Spotting the Unusual",
+    description: "When a payment looks different from everything the app has learned about you—wrong location, odd amount, strange merchant—it notices immediately."
   },
   {
-    icon: "⚖️",
-    title: "Anomaly Detection",
-    description: "Isolation Forest and Autoencoders identifying unusual transaction patterns."
+    icon: "💡",
+    title: "Adapting to You",
+    description: "Your home screen, shortcuts, and suggestions evolve based on how you actually use the app, creating an experience that feels custom-built for you."
   }
 ];
 
@@ -47,9 +47,9 @@ export function MLModels() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>ML Models in Production</h2>
+          <h2 className={styles.title}>How Your App Gets Smarter</h2>
           <p className={styles.subtitle}>
-            Proven machine learning algorithms powering payment intelligence
+            Simple ways Machine Learning improves with every transaction
           </p>
         </motion.div>
 

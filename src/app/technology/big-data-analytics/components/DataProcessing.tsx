@@ -5,34 +5,34 @@ import styles from "./DataProcessing.module.css";
 
 const technologies = [
   {
-    icon: "⚡",
-    title: "Stream Processing",
-    description: "Apache Kafka and Flink for real-time transaction data ingestion and processing at scale."
+    icon: "📝",
+    title: "Capturing Every Detail",
+    description: "Every payment creates a story—when it happened, where, how fast it processed. We capture all of this without missing anything, building a complete picture."
   },
   {
-    icon: "🗄️",
-    title: "Data Warehousing",
-    description: "Distributed storage with columnar databases optimized for analytical query performance."
+    icon: "🗂️",
+    title: "Organizing the Information",
+    description: "Thousands of payments flowing through every hour get organized automatically, making it easy to find patterns and answer questions later."
   },
   {
     icon: "🔄",
-    title: "ETL Pipelines",
-    description: "Automated data extraction, transformation, and loading with data quality validation."
+    title: "Continuous Collection",
+    description: "Information flows in constantly as users make payments. The system handles this 24/7 without slowing down or losing track of anything."
   },
   {
     icon: "📈",
-    title: "Time-Series Analysis",
-    description: "Specialized databases for payment trends, seasonality detection, and forecasting."
+    title: "Spotting Trends",
+    description: "See how payment patterns change over time—daily peaks, seasonal trends, growing categories—all tracked automatically from real usage."
   },
   {
     icon: "🎯",
-    title: "Data Lake Architecture",
-    description: "Centralized repository storing structured and unstructured payment data at any scale."
+    title: "Centralized View",
+    description: "All your payment information in one place, ready to answer questions about your business without digging through separate systems."
   },
   {
     icon: "🔍",
-    title: "Advanced Querying",
-    description: "SQL and NoSQL interfaces for complex analytical queries across petabytes of data."
+    title: "Finding Answers Fast",
+    description: "Need to know something specific? Get answers in seconds, even when searching through millions of transactions."
   }
 ];
 
@@ -47,9 +47,9 @@ export function DataProcessing() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Data Processing Infrastructure</h2>
+          <h2 className={styles.title}>Collecting the Story Behind Every Payment</h2>
           <p className={styles.subtitle}>
-            Enterprise-grade big data technologies for payment analytics
+            How we handle massive volumes of payment information
           </p>
         </motion.div>
 

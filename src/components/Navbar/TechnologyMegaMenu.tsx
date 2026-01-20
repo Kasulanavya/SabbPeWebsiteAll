@@ -105,6 +105,18 @@ function MenuItemComponent({ item }: MenuItemComponentProps) {
         return "/technology/machine-learning";
       case "Big Data & Analytics":
         return "/technology/big-data-analytics";
+      case "Cloud Computing":
+        return "/technology/cloud-computing";
+      case "Blockchain Development":
+        return "/technology/blockchain-development";
+      case "Internet of Things":
+        return "/technology/internet-of-things";
+      case "Chatbot Development":
+        return "/technology/chatbot-development";
+      case "Progressive Web Apps":
+        return "/technology/progressive-web-apps";
+      case "Metaverse & AR/VR":
+        return "/technology/metaverse-ar-vr";
       default:
         return "#";
     }

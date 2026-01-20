@@ -5,16 +5,16 @@ import styles from "./AIUseCases.module.css";
 
 const useCases = [
   {
-    title: "Fraud Prevention",
-    description: "Detect and prevent fraudulent transactions before they occur with multi-layered AI models analyzing behavioral patterns, device fingerprints, and transaction velocity."
+    title: "Keeping Your Money Safe",
+    description: "Every time you make a payment, AI examines your spending patterns in a split second. If something looks off - like a purchase from a country you've never visited - it flags it instantly, keeping your money protected without you lifting a finger."
   },
   {
-    title: "Credit Scoring",
-    description: "Alternative credit risk assessment using non-traditional data sources and deep learning to expand financial inclusion while maintaining low default rates."
+    title: "Understanding Your Spending",
+    description: "AI quietly tracks where your money goes and spots interesting patterns. It might notice you're spending more on subscriptions than you think, or that most of your money goes to groceries on weekends. These insights help you make smarter money decisions."
   },
   {
-    title: "Customer Personalization",
-    description: "Deliver personalized payment experiences, offers, and recommendations based on individual preferences and transaction history analysis."
+    title: "Getting Help When You Need It",
+    description: "Got a question about a payment at 2 AM? Our AI chatbot is always ready to help. Just ask in plain English and it'll understand what you need - whether that's tracking a payment, understanding a charge, or fixing an issue."
   }
 ];
 
@@ -29,9 +29,9 @@ export function AIUseCases() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Use Cases</h2>
+          <h2 className={styles.title}>Real Benefits You'll Notice</h2>
           <p className={styles.subtitle}>
-            Real-world applications of AI in payment processing
+            How AI improves your daily payment experience
           </p>
         </motion.div>
 
