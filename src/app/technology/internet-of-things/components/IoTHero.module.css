@@ -22,6 +22,26 @@
   pointer-events: none;
 }
 
+/* Network pulse represents connected devices */
+.networkGlow {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.15) 0%,
+    rgba(96, 165, 250, 0.1) 30%,
+    transparent 60%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(45px);
+  z-index: 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

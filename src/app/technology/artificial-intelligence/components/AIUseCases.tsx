@@ -40,14 +40,69 @@ export function AIUseCases() {
             <motion.div
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.2,
+                ease: "easeOut"
+              }}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 12px 40px rgba(37, 99, 235, 0.2)",
+                transition: { duration: 0.3 }
+              }}
             >
-              <h3 className={styles.cardTitle}>{useCase.title}</h3>
-              <p className={styles.cardDescription}>{useCase.description}</p>
+              {/* Step number indicator - shows this is a sequential process */}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 + 0.3, type: "spring" }}
+                style={{
+                  position: "absolute",
+                  top: "24px",
+                  right: "24px",
+                  width: "32px",
+                  height: "32px",
+                  borderRadius: "50%",
+                  background: "rgba(37, 99, 235, 0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  color: "#60a5fa"
+                }}
+              >
+                {index + 1}
+              </motion.div>
+              
+              {/* Title slides in from left - shows flow direction */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 + 0.2 }}
+              >
+                {useCase.title}
+              </motion.h3>
+              
+              {/* Description appears word by word effect */}
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  delay: index * 0.2 + 0.4,
+                  duration: 0.8
+                }}
+              >
+                {useCase.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

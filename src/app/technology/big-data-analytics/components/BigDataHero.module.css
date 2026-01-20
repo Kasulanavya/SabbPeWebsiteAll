@@ -22,6 +22,25 @@
   pointer-events: none;
 }
 
+/* Flowing data stream represents continuous data collection */
+.dataStreamGlow {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 200px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.15) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

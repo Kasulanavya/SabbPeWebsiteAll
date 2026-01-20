@@ -60,15 +60,60 @@ export function DataProcessing() {
               className={styles.card}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              whileHover={{ y: -4 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className={styles.iconWrapper}>
-                <div className={styles.icon}>{tech.icon}</div>
+                {/* Icon with flowing particles showing data collection */}
+                <motion.div
+                  className={styles.dataParticle}
+                  animate={{
+                    y: [0, -30],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.4,
+                    ease: "easeOut"
+                  }}
+                />
+                <motion.div 
+                  className={styles.icon}
+                  whileHover={{ 
+                    scale: 1.2,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.4 }
+                  }}
+                >
+                  {tech.icon}
+                </motion.div>
               </div>
-              <h3 className={styles.cardTitle}>{tech.title}</h3>
-              <p className={styles.cardDescription}>{tech.description}</p>
+
+              {/* Text reveals sequentially */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 + 0.2 }}
+              >
+                {tech.title}
+              </motion.h3>
+              
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 + 0.3 }}
+              >
+                {tech.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

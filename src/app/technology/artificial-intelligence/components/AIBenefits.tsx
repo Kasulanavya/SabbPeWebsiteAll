@@ -49,17 +49,58 @@ export function AIBenefits() {
             <motion.div
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.12,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ 
+                y: -8,
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
             >
-              <div className={styles.metric}>
+              {/* Metric pulses subtly - shows it's "live" data */}
+              <motion.div 
+                className={styles.metric}
+                animate={{ 
+                  scale: [1, 1.02, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.5
+                }}
+              >
                 <AnimatedCounter value={benefit.metric} />
-              </div>
-              <h3 className={styles.cardTitle}>{benefit.title}</h3>
-              <p className={styles.cardDescription}>{benefit.description}</p>
+              </motion.div>
+              
+              {/* Title appears after metric - natural reading order */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.12 + 0.3 }}
+              >
+                {benefit.title}
+              </motion.h3>
+              
+              {/* Description fades in last */}
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.12 + 0.5 }}
+              >
+                {benefit.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

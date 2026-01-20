@@ -51,15 +51,53 @@ export function DataInsights() {
               className={styles.card}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.12,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.2 }
+              }}
             >
-              <div className={styles.metric}>
+              {/* Metric with real-time pulse showing "live data" */}
+              <motion.div 
+                className={styles.metric}
+                animate={{ scale: [1, 1.03, 1] }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: index * 0.6,
+                  ease: "easeInOut"
+                }}
+              >
                 <AnimatedCounter value={insight.metric} />
-              </div>
-              <h3 className={styles.cardTitle}>{insight.title}</h3>
-              <p className={styles.cardDescription}>{insight.description}</p>
+              </motion.div>
+
+              {/* Title reveals after metric */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.12 + 0.3 }}
+              >
+                {insight.title}
+              </motion.h3>
+              
+              {/* Description follows */}
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.12 + 0.5 }}
+              >
+                {insight.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

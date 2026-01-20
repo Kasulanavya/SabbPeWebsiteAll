@@ -40,14 +40,56 @@ export function MLApplications() {
             <motion.div
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.7, 
+                delay: index * 0.25,
+                ease: "easeOut"
+              }}
+              whileHover={{ 
+                x: 8,
+                boxShadow: "0 12px 40px rgba(37, 99, 235, 0.25)",
+                transition: { duration: 0.3 }
+              }}
             >
-              <h3 className={styles.cardTitle}>{application.title}</h3>
-              <p className={styles.cardDescription}>{application.description}</p>
+              {/* Timeline marker showing progression */}
+              <motion.div
+                className={styles.timelineMarker}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  delay: index * 0.25 + 0.3,
+                  type: "spring",
+                  stiffness: 200
+                }}
+              >
+                <span className={styles.markerNumber}>{index + 1}</span>
+              </motion.div>
+
+              {/* Title appears after timeline marker */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.25 + 0.4 }}
+              >
+                {application.title}
+              </motion.h3>
+              
+              {/* Description follows */}
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.25 + 0.5 }}
+              >
+                {application.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

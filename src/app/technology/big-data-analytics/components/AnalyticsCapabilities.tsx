@@ -40,14 +40,55 @@ export function AnalyticsCapabilities() {
             <motion.div
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ 
+                scale: 1.03,
+                boxShadow: "0 12px 40px rgba(37, 99, 235, 0.25)",
+                transition: { duration: 0.3 }
+              }}
             >
-              <h3 className={styles.cardTitle}>{capability.title}</h3>
-              <p className={styles.cardDescription}>{capability.description}</p>
+              {/* Transformation indicator - raw data → insights */}
+              <motion.div
+                className={styles.transformIndicator}
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 1.2, 
+                  delay: index * 0.2 + 0.3,
+                  ease: "easeOut"
+                }}
+              />
+
+              {/* Title with reveal animation */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 + 0.2 }}
+              >
+                {capability.title}
+              </motion.h3>
+              
+              {/* Description follows */}
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 + 0.4 }}
+              >
+                {capability.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

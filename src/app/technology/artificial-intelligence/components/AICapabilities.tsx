@@ -60,15 +60,48 @@ export function AICapabilities() {
               className={styles.card}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              whileHover={{ y: -4 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className={styles.iconWrapper}>
-                <div className={styles.icon}>{capability.icon}</div>
+                {/* Icon gently scales on card hover - shows this feature is "activating" */}
+                <motion.div 
+                  className={styles.icon}
+                  whileHover={{ 
+                    scale: 1.2,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.4 }
+                  }}
+                >
+                  {capability.icon}
+                </motion.div>
               </div>
-              <h3 className={styles.cardTitle}>{capability.title}</h3>
-              <p className={styles.cardDescription}>{capability.description}</p>
+              
+              {/* Title appears slightly after card - creates reading flow */}
+              <motion.h3 
+                className={styles.cardTitle}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 + 0.2 }}
+              >
+                {capability.title}
+              </motion.h3>
+              
+              {/* Description fades in last - natural reading order */}
+              <motion.p 
+                className={styles.cardDescription}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 + 0.3 }}
+              >
+                {capability.description}
+              </motion.p>
             </motion.div>
           ))}
         </div>

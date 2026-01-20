@@ -22,6 +22,25 @@
   pointer-events: none;
 }
 
+/* Immersive glow shifts dimensionally */
+.immersiveGlow {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.12) 0%,
+    rgba(139, 92, 246, 0.09) 30%,
+    transparent 60%
+  );
+  pointer-events: none;
+  filter: blur(48px);
+  z-index: 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
