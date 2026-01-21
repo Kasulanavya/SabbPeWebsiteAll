@@ -1,51 +1,48 @@
+"use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-export const metadata = {
-  title: "Analytics Dashboards | SabbPe",
-  description: "Real-time insights and transaction reporting solutions.",
-};
+import styles from "./analytics.module.scss";
 
 export default function AnalyticsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-32 pb-20">
+    <main className={styles.analyticsPage}>
       {/* Hero Section */}
-      <section className="container mx-auto px-6 max-w-6xl mb-20">
+      <section className={styles.container + " " + styles.heroSection}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className={styles.heroContent}
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 mb-6">
-            <span className="text-sm font-semibold text-blue-300">SaaS Platforms</span>
+          <div className={styles.badge}>
+            <span className={styles.badgeText}>SaaS Platforms</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className={styles.heroTitle}>
             Analytics{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className={styles.gradientText}>
               Dashboards
             </span>
           </h1>
 
-          <p className="text-xl text-gray-400 max-w-3xl mb-8">
+          <p className={styles.heroDescription}>
             Real-time insights and comprehensive transaction reporting. Make data-driven 
             decisions with powerful analytics and visualization tools.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className={styles.buttonGroup}>
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow"
+                className={styles.primaryButton}
               >
                 Talk to Sales
               </motion.button>
             </Link>
 
             <Link href="/">
-              <button className="px-8 py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors">
+              <button className={styles.secondaryButton}>
                 Back to Home
               </button>
             </Link>
@@ -57,7 +54,7 @@ export default function AnalyticsPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
+          className={styles.featureGrid}
         >
           {[
             {
@@ -76,29 +73,29 @@ export default function AnalyticsPage() {
             <motion.div
               key={idx}
               whileHover={{ y: -8 }}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/30 backdrop-blur-xl transition-all"
+              className={styles.featureCard}
             >
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className={styles.featureTitle}>
                 {feature.title}
               </h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className={styles.featureDescription}>{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
       {/* Placeholder Section */}
-      <section className="container mx-auto px-6 max-w-6xl">
-        <div className="rounded-2xl bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border border-blue-400/20 p-12 md:p-16 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
+      <section className={styles.container}>
+        <div className={styles.placeholderSection}>
+          <h2 className={styles.placeholderTitle}>
             Unlock the power of data-driven decisions
           </h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className={styles.placeholderDescription}>
             Gain comprehensive visibility into your business metrics with intuitive 
             dashboards and actionable insights.
           </p>
           <Link href="/contact">
-            <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow">
+            <button className={styles.ctaButton}>
               Schedule a Demo
             </button>
           </Link>
