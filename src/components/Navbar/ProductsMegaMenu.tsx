@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import styles from "./ProductsMegaMenu.module.scss";
 
 /**
@@ -15,6 +16,7 @@ interface Category {
 interface MenuItem {
   name: string;
   tag?: string;
+  href?: string;
 }
 
 interface ContentColumn {
@@ -96,9 +98,9 @@ const megaMenuContent: Record<string, ContentColumn[]> = {
     {
       title: "Account Services",
       items: [
-        { name: "Business Accounts" },
-        { name: "Savings Accounts" },
-        { name: "Compliance Suite" },
+        { name: "Business Accounts", href: "/products/banking-suite/business-accounts" },
+        { name: "Savings Accounts", href: "/products/banking-suite/savings-account" },
+        { name: "Compliance Suite", href: "/products/banking-suite/compliance-suite" },
       ],
     },
     {
@@ -154,6 +156,21 @@ interface MenuItemComponentProps {
 }
 
 function MenuItemComponent({ item }: MenuItemComponentProps) {
+  if (item.href) {
+    return (
+      <motion.li
+        className={styles.item}
+        whileHover={{ x: 4 }}
+        transition={{ duration: 0.15 }}
+      >
+        <Link href={item.href}>
+          <span>{item.name}</span>
+          {item.tag && <span className={styles.tag}>{item.tag}</span>}
+        </Link>
+      </motion.li>
+    );
+  }
+
   return (
     <motion.li
       className={styles.item}
