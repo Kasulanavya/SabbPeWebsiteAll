@@ -10,10 +10,6 @@ We built a custom scroll experience in `src/components/layout/LayeredStickySecti
 *   **Logic**: It uses `position: sticky` combined with dynamic negative bottom margins.
 *   **Effect**: As you scroll, the current section "freezes" (sticks) while the next section pulls itself *up and over* the previous one. This creates a physical stacking card effect that feels much heavier and more premium than a standard parallax.
 
-### 2. Smooth Scrolling (Lenis)
-We use `lenis` to hijack native scrolling. This is necessary because:
-1.  Standard browser scrolling can be jittery with heavy sticky elements.
-2.  It allows us to sync 3D animations and scroll triggers (Framer Motion) with sub-pixel precision.
 
 ### 3. Glassmorphism System
 To avoid the "cheap blur" look, our glass cards use a specific stack:
