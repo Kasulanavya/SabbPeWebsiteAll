@@ -1,86 +1,55 @@
-# SabbPe Premium Landing Page
+# SabbPe Website
+The core design philosophy here is "Scroll-telling" — instead of static sections, we use layered, sticky scrolling to stack value propositions on top of each other, similar to how modern fintech leaders like Razorpay or Cred handle their story flows.
 
-A premium, storytelling fintech SaaS landing page built with Next.js 16, React, TypeScript, Tailwind CSS, and Framer Motion.
+## What's Under the Hood?
 
-## Features
+Beyond standard Next.js boilerplate, there are a few specific engineering patterns used here that are worth noting:
 
-- ✨ Premium glass morphism design
-- 🎬 Smooth Framer Motion animations
-- 📱 Fully responsive
-- 🎯 Storytelling layout (Razorpay/Stripe inspired)
-- 🔗 Radix UI Navigation with mega menus
-- 🎨 Deep blue gradient background with animated blobs
-- 📊 Interactive sections with scroll animations
-- 🌐 Product routing enabled
+### 1. The Layered Scroll Engine
+We built a custom scroll experience in `src/components/layout/LayeredStickySection.tsx`.
+*   **Logic**: It uses `position: sticky` combined with dynamic negative bottom margins.
+*   **Effect**: As you scroll, the current section "freezes" (sticks) while the next section pulls itself *up and over* the previous one. This creates a physical stacking card effect that feels much heavier and more premium than a standard parallax.
 
-## Getting Started
+### 2. Smooth Scrolling (Lenis)
+We use `lenis` to hijack native scrolling. This is necessary because:
+1.  Standard browser scrolling can be jittery with heavy sticky elements.
+2.  It allows us to sync 3D animations and scroll triggers (Framer Motion) with sub-pixel precision.
 
-1. Install dependencies:
-```bash
-npm install
-```
+### 3. Glassmorphism System
+To avoid the "cheap blur" look, our glass cards use a specific stack:
+*   `backdrop-filter: blur(xl)` for the fuzziness.
+*   A subtle white noise texture overlay (optional).
+*   High-contrast 1px borders with gradients (`from-white/20` to `transparent`) to simulate light catching the edge.
 
-2. Add your hero video:
-Place your video file at `public/videos/sabbpe-hero.mp4`
+## Tech Stack
 
-3. Run the development server:
-```bash
-npm run dev
-```
+*   **Framework**: Next.js 16 (App Router)
+*   **Styling**: Tailwind CSS
+*   **Animation**: Framer Motion
+*   **Icons**: Tabler Icons & Lucide React
+*   **Smooth Scroll**: Lenis
 
-4. Open [http://localhost:3000](http://localhost:3000)
+## Running Locally
 
-## Project Structure
+1.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-```
-src/
-├── app/
-│   ├── layout.tsx          # Root layout with global background
-│   ├── page.tsx            # Homepage
-│   ├── globals.css         # Global styles
-│   └── products/           # Product pages
-├── components/
-│   ├── Navbar.tsx          # Sticky navbar with mega menu
-│   ├── ScrollProgress.tsx  # Scroll progress indicator
-│   ├── LayeredSection.tsx  # Reusable section wrapper
-│   └── sections/           # Page sections
-│       ├── HeroSection.tsx
-│       ├── TrustStrip.tsx
-│       ├── ProblemStatement.tsx
-│       ├── UnifiedSolution.tsx
-│       ├── HowItWorks.tsx
-│       ├── ProductLayers.tsx
-│       ├── WhySabbPe.tsx
-│       ├── MissionSection.tsx
-│       └── FinalCTA.tsx
-```
+2.  **Start the dev server**
+    ```bash
+    npm run dev
+    ```
+    The site will be live at [http://localhost:3000](http://localhost:3000).
 
-## Design System
+## Project Layout
 
-### Colors
-- Primary Blue: `hsl(217, 91%, 60%)`
-- Cyan: `hsl(192, 91%, 55%)`
-- Teal: `hsl(168, 83%, 45%)`
-- Background: `hsl(222, 47%, 6%)`
+Everything important is in `src/`.
 
-### Components
-- Glass cards with backdrop blur
-- Gradient text effects
-- Animated floating elements
-- Interactive hover states
+*   `src/app` - Page routes and layouts.
+*   `src/components/layout` - The heavy lifters (Nav, Footer, Layered Scroll wrappers).
+*   `src/components/sections` - Individual marketing sections (Hero, Features, Trust Strip).
+*   `src/styles` - minimal, mostly handled by Tailwind in `globals.css`.
 
-## Sections
-
-1. **Hero** - Full-screen with typewriter effect
-2. **Trust Strip** - Scrolling partner logos
-3. **Problem Statement** - Pain point cards
-4. **Unified Solution** - Layered UI diagram
-5. **How It Works** - Timeline with scroll progress
-6. **Product Layers** - Tabbed product showcase
-7. **Why SabbPe** - Feature cards
-8. **Mission** - Dot-grid network animation
-9. **Final CTA** - Gradient border glow
-
-## License
-
-MIT
+---
+*Built for SabbPe.*
