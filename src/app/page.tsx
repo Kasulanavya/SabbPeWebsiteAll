@@ -1,5 +1,5 @@
-import HomePage from "@/components/home/HomePage";
+import PremiumHomePage from "@/components/premium/PremiumHomePage";
 
 export default function Home() {
-  return <HomePage />;
+  return <PremiumHomePage />;
 }

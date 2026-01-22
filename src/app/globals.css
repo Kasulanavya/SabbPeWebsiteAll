@@ -8,7 +8,6 @@
 /* Root Variables */
 /* ============================= */
 :root {
-  /* Fonts */
   --font-inter: "Inter", system-ui, sans-serif;
   --font-space-grotesk: "Space Grotesk", "Inter", system-ui, sans-serif;
 
@@ -146,6 +145,15 @@ a {
 
   .animate-blob {
     animation: blob 20s infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 
