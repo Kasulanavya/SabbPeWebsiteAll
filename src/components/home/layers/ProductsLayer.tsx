@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CreditCard, Globe, Lock, Smartphone, Zap, BarChart3, ArrowUpRight } from 'lucide-react';
+import { CreditCard, Globe, Lock, Smartphone, Zap, BarChart3, Users, PiggyBank, FileCheck, ArrowUpRight } from 'lucide-react';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 
 const features = [
     {
@@ -49,7 +50,34 @@ const features = [
     }
 ];
 
-function SpotlightCard({ children, className = "", colSpan = "" }: { children: React.ReactNode; className?: string, colSpan?: string }) {
+const bankingProducts = [
+    {
+        title: "Business Accounts",
+        desc: "Enterprise payments with team management and analytics.",
+        icon: Users,
+        colSpan: "md:col-span-1",
+        bg: "bg-gradient-to-br from-blue-900/20 to-cyan-900/20",
+        href: "/products/banking-suite/business-accounts"
+    },
+    {
+        title: "Savings Accounts",
+        desc: "High-yield savings with competitive returns and protection.",
+        icon: PiggyBank,
+        colSpan: "md:col-span-1",
+        bg: "bg-gradient-to-br from-teal-900/20 to-green-900/20",
+        href: "/products/banking-suite/savings-account"
+    },
+    {
+        title: "Compliance Suite",
+        desc: "Automated KYC/AML and regulatory compliance.",
+        icon: FileCheck,
+        colSpan: "md:col-span-1",
+        bg: "bg-gradient-to-br from-yellow-900/20 to-orange-900/20",
+        href: "/products/banking-suite/compliance-suite"
+    }
+];
+
+function SpotlightCard({ children, className = "", colSpan = "", href = "" }: { children: React.ReactNode; className?: string, colSpan?: string, href?: string }) {
     const divRef = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [opacity, setOpacity] = useState(0);
@@ -63,7 +91,7 @@ function SpotlightCard({ children, className = "", colSpan = "" }: { children: R
     const handleMouseEnter = () => setOpacity(1);
     const handleMouseLeave = () => setOpacity(0);
 
-    return (
+    const cardContent = (
         <motion.div
             ref={divRef}
             onMouseMove={handleMouseMove}
@@ -81,23 +109,29 @@ function SpotlightCard({ children, className = "", colSpan = "" }: { children: R
             {children}
         </motion.div>
     );
+
+    if (href) {
+        return <Link href={href}>{cardContent}</Link>;
+    }
+
+    return cardContent;
 }
 
 export default function ProductsLayer() {
     return (
         <div className="w-full h-full flex flex-col items-center justify-center">
             {/* Header */}
-            <div className="text-center mb-10 max-w-2xl">
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-                    Powerful building blocks
+            <div className="text-center mb-8 max-w-2xl">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
+                    Powerful Building Blocks
                 </h2>
-                <p className="text-lg text-slate-400">
-                    Infrastructure for the next generation of finance.
+                <p className="text-base text-slate-400">
+                    Complete fintech infrastructure for modern payments.
                 </p>
             </div>
 
-            {/* Grid */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto pr-2" style={{ maxHeight: '100%' }}>
+            {/* Main Products Grid */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 {features.map((f, i) => (
                     <SpotlightCard key={i} colSpan={f.colSpan}>
                         <div className={`absolute inset-0 ${f.bg} opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-2xl`} />
@@ -114,6 +148,36 @@ export default function ProductsLayer() {
                         </div>
                     </SpotlightCard>
                 ))}
+            </div>
+
+            {/* Banking Suite Section */}
+            <div className="w-full mt-8">
+                <Link href="/products/banking-suite">
+                    <div className="text-center mb-6 group cursor-pointer">
+                        <h3 className="text-2xl font-display font-bold text-white mb-2">Banking Suite</h3>
+                        <p className="text-slate-400 text-sm">Complete banking solutions for businesses and individuals</p>
+                    </div>
+                </Link>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {bankingProducts.map((product, i) => (
+                        <SpotlightCard key={i} colSpan={product.colSpan} href={product.href}>
+                            <div className={`absolute inset-0 ${product.bg} opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-2xl`} />
+
+                            <div className="relative z-20 flex justify-between items-start">
+                                <div className="p-2 rounded-xl bg-white/5 border border-white/10 text-white group-hover:bg-sabbpe-cyan/10 group-hover:border-sabbpe-cyan/30">
+                                    <product.icon className="w-5 h-5 group-hover:text-sabbpe-cyan transition-colors" />
+                                </div>
+                                <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-sabbpe-cyan transition-colors" />
+                            </div>
+
+                            <div className="relative z-20 mt-auto">
+                                <h3 className="text-lg font-bold text-white mb-1">{product.title}</h3>
+                                <p className="text-slate-400 text-sm">{product.desc}</p>
+                            </div>
+                        </SpotlightCard>
+                    ))}
+                </div>
             </div>
         </div>
     );

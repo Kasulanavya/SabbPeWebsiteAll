@@ -1,4 +1,19 @@
 import type { Metadata } from "next";
+<<<<<<< HEAD
+import { Inter } from "next/font/google";
+import "@fontsource/inter";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "SabbPe - Enterprise Digital Payments & Fintech Solutions",
+  description: "India-focused, enterprise-grade digital payments and fintech solutions. Modern payment infrastructure for businesses.",
+=======
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import ScrollProgress from "@/components/layout/ScrollProgress";
@@ -7,6 +22,7 @@ import Footer from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "SabbPe - Payments Simplified. Business Amplified.",
   description: "India's digital payments partner for UPI, QR, Gateway, Payouts & Business Growth. Trusted by 1000+ merchants across India.",
+>>>>>>> 895c155e44dc0c4d4d8d3e2eab17a48e433acf8f
 };
 
 export default function RootLayout({
@@ -15,6 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<<<<<<< HEAD
+    <html lang="en">
+      <body className={inter.variable}>
+        {children}
+=======
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
 
@@ -52,6 +73,7 @@ export default function RootLayout({
           <Footer />
         </div>
 
+>>>>>>> 895c155e44dc0c4d4d8d3e2eab17a48e433acf8f
       </body>
     </html>
   );

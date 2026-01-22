@@ -90,8 +90,8 @@ const megaMenuContent: Record<string, ContentColumn[]> = {
             title: 'Account Services',
             items: [
                 { name: 'Business Accounts', href: '/products/business-accounts' },
-                { name: 'Savings Accounts', href: '/products/savings' },
-                { name: 'Compliance Suite', href: '/products/compliance' },
+                { name: 'Savings Accounts', href: '/products/savings-account' },
+                { name: 'Compliance Suite', href: '/products/compliance-suite' },
             ],
         },
         {
